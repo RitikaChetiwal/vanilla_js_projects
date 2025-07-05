@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0 2em;
+    /* background: #f1f1f1; */
+    background: #ccc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.palette #generate {
+    outline: none;
+    border: none;
+    padding: 0.7em 2em;
+    font-size: 1.1em;
+    position: absolute;
+    top: -1em;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2em;
+    background: #000;
+    color: #fff;
+    font-weight: 500;
+}
+
+.palette #generate:hover {
+    background: #fff;
+    color: #1f1f1f;
+    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.palette {
+    position: relative;
+    background: #dac7c7;
+    width: 45em;
+    height: 28em;
+    border-radius: 20px;
+    text-align: center;
+    color: #1f1f1f;
+    padding-top: 5em;
+    box-sizing: border-box;
+    box-shadow: 0 25px 50px - 12px rgba(0, 0, 0, 0.1);
+}
+
+.copyMessage{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.colorBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.colorBox button{
+    border: none;
+    background: none;
+    height: 27px;
+    width: 27px;
+    display: flex;
+}
+
+.colorBox button:hover{
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.colorBox button:active{
+    background: #3c3c3c;
+}   
+
+.colors {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow-y: hidden;
+    height: 100%;
+    /* width: 100%; */
+    border-radius: 20px;
+}
+
+/* .color>div {
+    width: 25%;
+} */
+
+.color {
+    background: #ccc;
+    height: 17em;
+    width: 180px;
+    overflow-x: hidden;
+    border-radius: 18px;
+}
+
+.colors h4 {
+    font-size: 0.9em;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        padding: 2em;
+    }
+
+    .palette {
+        height: initial;
+    }
+
+    .colors {
+        flex-direction: column;
+    }
+
+    .colors>div {
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
