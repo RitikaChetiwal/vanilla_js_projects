@@ -1,0 +1,202 @@
+/* stylized-quiz.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(35deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    perspective: 1000px;
+}
+
+.quiz-section {
+    width: 60%;
+    max-width: 650px;
+    padding: 2rem;
+    transform-style: preserve-3d;
+}
+
+#quiz {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transform: rotateY(5deg) rotateX(5deg);
+    transition: transform 0.5s ease;
+}
+
+#quiz:hover {
+    transform: rotateY(0) rotateX(0);
+}
+
+.question {
+    /* background: linear-gradient(45deg, #667eea, #764ba2); */
+    /* -webkit-background-clip: text;
+    background-clip: text; */
+    /* color: transparent; */
+    /* text-align: center; */
+    margin-bottom: 2rem;
+    font-weight: normal;
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.1); */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+li {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+}
+
+li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    background: white;
+    border-color: #667eea;
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+li:hover::before {
+    left: 100%;
+}
+
+.answer:checked + label {
+    color: #4a5568;
+    font-weight: 600;
+}
+
+/* .answer:checked ~ label::after {
+    content: "✔️";
+    position: absolute;
+    right: 1.5rem;
+    color: #48bb78;
+    font-size: 1.4rem;
+    animation: checkPop 0.3s ease;
+} */
+
+label {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    color: #4a5568;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+#submitButton, .reloadButton {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.reloadButton{
+    display: flex;
+    gap: 30px;
+}
+
+#submitButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+#submitButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    letter-spacing: 1.5px;
+}
+
+#submitButton:hover::before {
+    left: 100%;
+}
+
+@keyframes checkPop {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Neon pulse animation for quiz container */
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 10px rgba(102, 126, 234, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(102, 126, 234, 0.5); }
+}
+
+#quiz {
+    animation: neonPulse 3s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #quiz {
+        padding: 1.5rem;
+        transform: none;
+    }
+    
+    .question {
+        font-size: 1.5rem;
+    }
+    
+    label {
+        font-size: 1rem;
+    }
+    
+    #submitButton {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}

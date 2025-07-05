@@ -1,0 +1,102 @@
+[
+    {
+        "question": "Which keyword was traditionally used to declare variables before ES6?",
+        "options": [
+            "var",
+            "int",
+            "let",
+            "float"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the correct syntax to log 'Hello World' in the console?",
+        "options": [
+            "print('Hello World')",
+            "console.log('Hello World')",
+            "log('Hello World')",
+            "echo('Hello World')"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "Which of these is a JavaScript data type?",
+        "options": [
+            "number",
+            "decimal",
+            "char",
+            "double"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "How do you create a function in JavaScript?",
+        "options": [
+            "function = myFunc()",
+            "def myFunc()",
+            "function myFunc()",
+            "create function myFunc()"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "Which operator is used for strict equality in JavaScript?",
+        "options": [
+            "=",
+            "==",
+            "===",
+            "!=="
+        ],
+        "correct": 2
+    },
+    {
+        "question": "What does `typeof` operator do in JavaScript?",
+        "options": [
+            "Checks data type",
+            "Declares a variable",
+            "Returns the length of a string",
+            "Rounds a number"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Which method is used to parse JSON strings?",
+        "options": [
+            "JSON.stringify()",
+            "JSON.parse()",
+            "parse.JSON()",
+            "parseObject()"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What will `Boolean(0)` return?",
+        "options": [
+            "true",
+            "false",
+            "NaN",
+            "undefined"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "Which array method removes the last item?",
+        "options": [
+            "shift()",
+            "pop()",
+            "remove()",
+            "splice()"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "How do you write a single-line comment in JavaScript?",
+        "options": [
+            "<!-- comment -->",
+            "# comment",
+            "// comment",
+            "/* comment */"
+        ],
+        "correct": 2
+    }
+]
