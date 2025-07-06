@@ -1,0 +1,180 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* background: linear-gradient(45deg, #616060, #2d2d2d); */
+    background: linear-gradient(50deg, #5c5959, #000);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.countdown-container {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 2.5rem;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.countdown {
+    display: flex;
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.time-section {
+    background: linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(30, 30, 30, 0.9));
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    min-width: 120px;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.time-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.time-section:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.time {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: transparent;
+    background: linear-gradient(45deg, #ff6b6b, #ff9f43);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.label {
+    font-size: 0.9rem;
+    color: #ddd;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .countdown {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .time-section {
+        min-width: 160px;
+        padding: 1.5rem;
+    }
+    
+    .time {
+        font-size: 2.5rem;
+    }
+    
+    .countdown-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
+
+/* Expired state */
+/* .expired {
+    animation: pulse 1.5s ease infinite;
+    color: #ff6b6b !important;
+} */
+
+.expired {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.7);
+    animation: pulse 1.5s ease-in infinite;
+    margin-left: 125px;
+}
+
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.myDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.myDiv h1{
+    font-size: 70px;
+    color: #cec7c7;
+    text-align: center;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    text-shadow: 0 0 10px rgba(211, 126, 53, 0.7);
+
+}
+
+.pickTime{
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pickTime input{
+    height: 65px;
+    width: 350px;
+    font-size: 30px;
+    color: red;
+    background: #262626;
+    border: 2px solid black;
+    text-align: center;
+    cursor: cell;
+}
+
+.pickTime input:hover{
+    background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+}
+
+.pickTime button{
+    font-size: 20px;
+    padding: 20px;
+    color: red;
+    /* background: #000; */
+    background: linear-gradient(50deg, #525151, #000);
+
+}
+
+.pickTime button:hover{
+    background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+}
