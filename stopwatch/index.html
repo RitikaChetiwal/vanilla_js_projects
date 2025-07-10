@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* background-color: #000; */
+            color: transparent;
+            background: linear-gradient(45deg, #dad5d5, #6d3e3e);           
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .stopwatch {
+            text-align: center;
+
+        }
+
+        h1{
+            color: #fff;
+            margin-bottom: 200px;
+            font-size: 70px;
+            color: transparent;
+            background: linear-gradient(45deg, #1a1a1a, #888181);           
+            -webkit-background-clip: text;
+            background-clip: text;
+        }        
+
+        .display {
+            font-size: 80px;
+            margin-bottom: 20px;
+            color: #fff;
+            color: transparent;
+            background: linear-gradient(45deg, #1a1a1a, #888181);           
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 15px 25px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 15px;
+            color: transparent;
+            background: linear-gradient(45deg, #1a1a1a, #888181);           
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        button:hover{
+            /* background: #000; */
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="stopwatch">
+        <h1>STOPWATCH</h1>
+        <div class="display">00:00:00</div>
+        <button id="start">START</button>
+        <button id="stop">STOP</button>
+        <button id="reset">RESET</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
