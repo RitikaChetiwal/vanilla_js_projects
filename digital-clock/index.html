@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: consolas;
+            text-transform: uppercase;
+            font-size: 60px;
+            background: #000;
+        }
+
+        #clock h1{
+            color: white;
+        }
+
+        #hrs, #min, #sec{
+            color: rgb(15, 144, 231);
+        }
+
+        #time {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+
+        }
+
+        #time div {
+            text-align: center;
+            
+        }
+
+        .same{
+            color: rgb(15, 144, 231);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="clock">
+        <h1>The time is now</h1>
+        <div id="time">
+            <div>
+                <div id="hrs">00</div>
+                <div class="same">hours</div>
+            </div>
+            <div>
+                <div id="min">00</div>
+                <div class="same">minutes</div>
+            </div>
+            <div>
+                <div id="sec">00</div>
+                <div class="same">seconds</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const showTime = () => {
+            
+            const hours = new Date().getHours();
+            const minutes = new Date().getMinutes();
+            const seconds = new Date().getSeconds();
+
+            const hrs = document.querySelector('#hrs');
+            const min = document.querySelector('#min');
+            const sec = document.querySelector('#sec');
+
+            hrs.textContent = hours;
+            min.textContent = minutes;
+            sec.textContent = seconds;
+
+        }
+
+        setInterval(showTime, 1000)
+
+    </script>
+</body>
+
+</html>
